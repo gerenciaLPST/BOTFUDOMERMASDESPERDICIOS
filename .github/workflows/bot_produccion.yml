@@ -1,0 +1,29 @@
+name: Bot Produccion Fudo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-produccion:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Descargar el código
+      uses: actions/checkout@v4
+
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install playwright pandas openpyxl
+        playwright install chromium
+
+    - name: Ejecutar Bot de Producción
+      env:
+        FUDO_USER: ${{ secrets.FUDO_USER }}
+        FUDO_PASS: ${{ secrets.FUDO_PASS }}
+      run: |
+        python bot_produccion.py
