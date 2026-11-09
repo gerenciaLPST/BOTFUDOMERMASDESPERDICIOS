@@ -8,7 +8,7 @@ PASSWORD = os.environ.get("FUDO_PASS")
 
 # --------------------------------------------------------------------------
 # ENLACE CSV DE TU HOJA TURNOACTUAL
-URL_GOOGLE_SHEETS = "https://docs.google.com/spreadsheets/d/TU_ID_DE_GOOGLE_SHEETS/export?format=csv"
+URL_GOOGLE_SHEETS = "https://docs.google.com/spreadsheets/d/1GOrv8y5kPY_AM8GgWDlElvprgnQ0U-CrriTaqdlSstA/edit?gid=1962636174#gid=1962636174"
 # --------------------------------------------------------------------------
 
 def obtener_datos():
